@@ -1,0 +1,203 @@
+.navbar{
+    background-color:black ;
+   
+}
+.navbar .container a{
+    color:bisque ;
+    font-size: 20px;
+}
+.navbar .container .collapse{
+    display: flex;
+    justify-content:space-between;
+}
+.introduction h1{
+    text-align: center;     
+    font-weight: bold;  
+    font-size: 50px;
+}
+.introduction ul{
+    text-align: left;
+}
+.navbar .container .nav-right a{
+    text-decoration: none;
+    color: bisque;
+    font-size: 20px;
+}
+.introduction{
+    margin: 100px 0;
+}
+.introduction .container li{
+    font-size: 25px;
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    /* Chiều cao tối thiểu */
+    min-height: 100px;
+}
+.container{
+    /* Giúp điều chỉnh các khối dễ hơn */
+    position: relative;
+    max-width: 1350px;
+    width: 100%;
+}
+button{
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #fff;
+    border: none;
+    /* Bo tròn các element */
+    border-radius: 6px;
+    /* Thay đổi con trỏ chuột khi click chuột vào nút button */
+    cursor: pointer;
+    /* Sử dụng bóng nhẹ cho phần button */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.filter_buttons{
+    /* Định nghĩa và phân chia bố cục cho các thẻ con nằm trong */
+    display: flex;
+    align-items: center;
+    /* xác định khoảng cách của các phần tử nằm trong flex */
+    gap: 10px;
+    /* Nếu các phần tử không còn đủ không gian sẽ được di chuyển xuống phía dưới */
+    flex-wrap: wrap;
+}
+button.active{
+    background-color: #4070f4;
+    color: #fff;
+}
+
+
+
+.filterable_cards{
+    gap: 20px;
+    display: flex;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+.card{
+    flex-grow: 1;
+    flex-basis: 300px;
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 8px;
+}
+.card img{
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    height: auto;
+    object-fit: cover;
+}
+.card_body{
+    padding: 15px 20px 20px;
+}
+.card_title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+.card_text{
+    font-size: 18px;
+    color: #333;
+}
+.card.hide{
+    display: none;
+}
+
+.header{
+    height: 50px;
+    position: relative;
+}
+.Product h1{
+    text-align: center; 
+    font-weight: 100px;
+    margin: 50px 0 0;
+    padding: 10px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info, .footer-links, .footer-social {
+    width: 30%;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.Product h1{
+    color:black;
+    text-align: center;
+    font-size: 70px;
+}
+
+.Product{
+    margin-bottom: 200px;
+}
+.product-view{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+}
+.product-view a{
+    text-decoration: none;
+    font-weight: 600;
+}
+.product-detail img {
+    height: 500px;
+    margin: 60px;
+    padding: 40px;
+}
+.product-detail h1{
+    text-align: center;
+    margin-top: 180px;
+    font-size: 60px;
+}
+.product-detail p {
+     font-size: 30px;
+    text-align: center;
+
+}
