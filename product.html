@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tankhanhphone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="nav-left">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Trang Chủ </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./product.html">Điện Thoại</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./phukien.html">Phụ Kiện</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gioithieu.html">Giới Thiệu </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#introduction2">Liên Hệ </a>
+                        </li>
+                </div>
+              >
+    </nav>
+
+    <div class="Product" id="Product">
+        <h1>Sản Phẩm </h1> 
+        <div class="filterable_cards container"></div>
+        <div class="product-view">
+            <a href="./product.html">View All Product</a>
+        </div>
+    </div>
+
+
+ <!-- Boostrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage-compat.js"></script>
+
+    <!-- Firebase Auth -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.13.1/firebase-auth-compat.min.js"
+        integrity="sha512-b2PGOE6ClpdFR5WZylPqJ9NEtHyGtdXKIe5wI0qRKVg3VeH9Km8CvihpnySwf6v21TV2cMTUp/BuglUiFLB38Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="./js/fisebase-config.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
