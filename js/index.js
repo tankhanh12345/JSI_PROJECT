@@ -1,3 +1,4 @@
+
 // Hàm format giá tiền VND
 function formatPrice(price) {
     return new Intl.NumberFormat('vi-VN', {
@@ -28,39 +29,43 @@ function createProductCard(product) {
 // Hàm render sản phẩm từ Firebase
 async function renderProductsFromFirebase() {
     const container = document.querySelector('.filterable_cards');
-    
+
     if (!container) {
         console.error('Container .filterable_cards không tồn tại');
         return;
     }
 
     try {
-        // Hiển thị loading
-        container.innerHTML = '<div class="loading">Đang tải sản phẩm...</div>';
-
-        // Lấy dữ liệu từ Firebase
-        const querySnapshot = await getDocs(collection(db, "products"));
         const products = [];
 
-        querySnapshot.forEach((doc) => {
-            products.push({
-                id: doc.id,
-                ...doc.data()
-            });
-        });
+        db.collection("products")
+            .get()
+            .then((snapshot) => {
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const product = {
+                        id: doc.id,
+                        name: data.name,
+                        price: data.price || 0,
+                        image: data.image || '',
+                        categoryName: data.categoryName || 'Không rõ',
+                        status: data.status || 'inactive'
+                    };
+                    products.push(product);
+                });
 
-        // Kiểm tra có sản phẩm không
-        if (products.length === 0) {
-            container.innerHTML = '<div class="no-products">Không có sản phẩm nào</div>';
-            return;
-        }
+                // Kiểm tra có sản phẩm không
+                if (products.length === 0) {
+                    container.innerHTML = '<div class="no-products">Không có sản phẩm nào</div>';
+                    return;
+                }
 
-        // Render sản phẩm
-        const productsHTML = products.map(product => createProductCard(product)).join('');
-        container.innerHTML = productsHTML;
+                // Render sản phẩm
+                const productsHTML = products.map(product => createProductCard(product)).join('');
+                container.innerHTML = productsHTML;
 
-        console.log(`Đã render ${products.length} sản phẩm từ Firebase`);
-
+                console.log(`Đã render ${products.length} sản phẩm từ Firebase`);
+            })
     } catch (error) {
         console.error('Lỗi khi lấy dữ liệu từ Firebase:', error);
         container.innerHTML = '<div class="error">Lỗi khi tải sản phẩm</div>';
@@ -70,6 +75,6 @@ async function renderProductsFromFirebase() {
 // Mobile navigation handler
 document.addEventListener('DOMContentLoaded', function () {
     renderProductsFromFirebase();
-  
+
 });
 
